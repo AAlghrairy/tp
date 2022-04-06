@@ -11,7 +11,12 @@ public class ParseException extends IllegalValueException {
         super(message);
     }
 
+    /**
+     * Parse Exception which include cause of exception with error message.
+     * @param message The message to be passed
+     * @param cause The cause of the exception
+     */
     public ParseException(String message, Throwable cause) {
-        super(message, cause);
+        super(message + "\nCause: " + cause.getMessage(), cause);
     }
 }
